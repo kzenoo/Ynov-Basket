@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ player.first_name }} {{ player.last_name }}</h1>
+<p>Équipe : <a href="{{ url_for('routes.equipe', team_id=player.team.id) }}">{{ player.team.name }}</a></p>
+<p>Position : {{ player.position }}</p>
+<p>Hauteur : {{ player.height_cm }} cm</p>
+<p>Poids : {{ player.weight_kg }} kg</p>
+{% endblock %}

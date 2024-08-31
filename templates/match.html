@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Match : {{ match.home_team.abbreviation }} VS {{ match.visitor_team.abbreviation }}</h1>
+<p>Date : {{ match.date.strftime('%d/%m/%Y') }}</p>
+<p>Score : {{ match.home_team_score }} - {{ match.visitor_team_score }}</p>
+<p>Équipe Domicile : <a href="{{ url_for('routes.equipe', team_id=match.home_team.id) }}">{{ match.home_team.name }}</a></p>
+<p>Équipe Visiteur : <a href="{{ url_for('routes.equipe', team_id=match.visitor_team.id) }}">{{ match.visitor_team.name }}</a></p>
+{% endblock %}

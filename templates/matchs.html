@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Liste des Matchs</h1>
+<div>
+    {% for match in matches %}
+    <div>
+        <a href="{{ url_for('routes.match', match_id=match.id) }}">
+            {{ match.home_team.abbreviation }} VS {{ match.visitor_team.abbreviation }} - {{ match.date.strftime('%d/%m/%Y') }}
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

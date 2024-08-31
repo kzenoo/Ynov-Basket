@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Liste des Joueurs</h1>
+<div>
+    {% for player in players %}
+    <div>
+        <a href="{{ url_for('routes.joueur', player_id=player.id) }}">
+            {{ player.first_name }} {{ player.last_name }}
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
