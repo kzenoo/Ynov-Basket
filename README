@@ -1,0 +1,104 @@
+# YNOV Basket
+
+**YNOV Basket** est une application web permettant de visualiser des données de joueurs de basket, équipes et matchs à partir de l'API [BallDontLie](http://www.balldontlie.io/). Cette application inclut des fonctionnalités de connexion et de gestion de compte.
+
+## Prérequis
+
+- Python 3.7+
+- pip
+
+## Installation
+
+1. **Clonez le dépôt :**
+
+   `git clone https://github.com/votre-utilisateur/ynov-basket.git`
+
+   `cd ynov-basket`
+
+2. **Créez un environnement virtuel :**
+
+   `python -m venv venv`
+
+3. **Activez l'environnement virtuel :**
+
+   - **Sur Windows :**
+
+     `venv\Scripts\activate`
+
+   - **Sur macOS/Linux :**
+
+     `source venv/bin/activate`
+
+4. **Installez les dépendances :**
+
+   `pip install -r requirements.txt`
+
+5. **Créez la base de données :**
+
+   Assurez-vous que `create_db.py` est correctement configuré, puis exécutez :
+
+   `python create_db.py`
+
+## Configuration
+
+Le fichier de configuration est `config.py`. Modifiez les paramètres comme la clé secrète et l'URI de la base de données selon vos besoins.
+
+## Lancer l'application
+
+Exécutez l'application Flask :
+
+`python app.py`
+
+Accédez à l'application dans votre navigateur :
+
+Ouvrez [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+## Fonctionnalités
+
+1. **Connexion et Création de Compte**
+
+   Vous devez être connecté pour accéder aux autres fonctionnalités du site. Le formulaire de login et d'inscription est accessible via le menu principal.
+
+2. **Pages et Boutons**
+
+   - **Joueurs :**
+     - Affiche des cartes avec les noms et prénoms de tous les joueurs.
+     - Chaque carte de joueur est cliquable et mène à une page détaillée du joueur affichant toutes les données du joueur (excepté son ID).
+     - La page du joueur inclut une carte avec le nom de l'équipe du joueur, cliquable pour accéder à la page de l'équipe.
+
+   - **Équipes :**
+     - Affiche des cartes avec les noms de toutes les équipes.
+     - Chaque carte d'équipe est cliquable et mène à une page détaillée de l'équipe affichant toutes les données de l'équipe (excepté son ID).
+     - La page de l'équipe inclut une liste de cartes avec les noms et prénoms des joueurs membres de l'équipe, chacune cliquable pour accéder aux détails du joueur.
+
+   - **Matchs :**
+     - Affiche des cartes avec des données simples sur tous les matchs, incluant l'abréviation des équipes "home_team" et "visitor_team" ainsi que la date du match.
+     - Chaque carte de match est cliquable et mène à une page détaillée du match affichant toutes les données du match (excepté son ID).
+     - La page du match inclut des cartes représentant les équipes qui s'affrontent, chacune cliquable pour accéder aux détails de l'équipe.
+
+3. **Homepage**
+
+   La page d'accueil du site est la page des joueurs.
+
+## Contribuer
+
+1. Forkez le dépôt
+2. Créez une branche pour votre fonctionnalité :
+
+   `git checkout -b feature/ma-fonctionnalite`
+
+3. Faites vos modifications et committez :
+
+   `git commit -am 'Ajout d\'une nouvelle fonctionnalité'`
+
+4. Poussez votre branche :
+
+   `git push origin feature/ma-fonctionnalite`
+
+5. Ouvrez une pull request
+
+## License
+
+Ce projet est sous la licence MIT.
+
+Pour toute question ou problème, n'hésitez pas à ouvrir une issue sur le dépôt GitHub ou à me contacter directement.
